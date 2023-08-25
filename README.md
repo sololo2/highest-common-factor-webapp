@@ -6,6 +6,8 @@
 public int highestCommonFactor(int[] numbers) {
 // your code here
 }
-
+- 
+## Swagger ui endpoint
+- http://localhost:9092/highest-common-factor-webbapp/swagger-ui/index.html#/post/getHighestCommonFactorController
 ## Endpoints for answers
 - http://localhost:9092/highest-common-factor-webapp/highestCommonFactor.do?firstNumber=?&secondNumber=?
