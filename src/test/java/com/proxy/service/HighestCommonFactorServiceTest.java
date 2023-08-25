@@ -29,4 +29,14 @@ public class HighestCommonFactorServiceTest {
         assertEquals(5,highestCommonFactorService.getHighestCommonFactorService(listNumbers));
     }
 
+    @Test
+    public void getHighestCommonFactorServiceTestIs1(){
+        List<Integer> listNumbers = new ArrayList<>();
+        listNumbers.add(3);
+        listNumbers.add(31);
+        listNumbers.add(2);
+        listNumbers.add(18);
+        assertEquals(1,highestCommonFactorService.getHighestCommonFactorService(listNumbers));
+    }
+
 }
