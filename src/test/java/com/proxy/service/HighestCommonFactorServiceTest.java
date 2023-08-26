@@ -7,36 +7,23 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import static org.junit.Assert.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @ActiveProfiles("test")
-
 public class HighestCommonFactorServiceTest {
     @Autowired
     HighestCommonFactorService highestCommonFactorService;
 
-
     @Test
     public void getHighestCommonFactorServiceTest(){
-        List<Integer> listNumbers = new ArrayList<>();
-        listNumbers.add(5);
-        listNumbers.add(10);
-        listNumbers.add(15);
-        listNumbers.add(20);
-        assertEquals(5,highestCommonFactorService.getHighestCommonFactorService(listNumbers));
+        int[] array = {5,10,15,20};
+        assertEquals(5,highestCommonFactorService.getHighestCommonFactorService(array));
     }
 
     @Test
     public void getHighestCommonFactorServiceTestIs1(){
-        List<Integer> listNumbers = new ArrayList<>();
-        listNumbers.add(3);
-        listNumbers.add(31);
-        listNumbers.add(2);
-        listNumbers.add(18);
-        assertEquals(1,highestCommonFactorService.getHighestCommonFactorService(listNumbers));
+        int[] array = {3,31,2,18};
+        assertEquals(1,highestCommonFactorService.getHighestCommonFactorService(array));
     }
-
 }

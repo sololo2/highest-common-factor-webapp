@@ -1,26 +1,24 @@
 package com.proxy.service;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class HighestCommonFactorService {
 
-    public int getHighestCommonFactorService(List<Integer> array) {
-        return getHighestCommonFactor(array);
-
-    }
-    public int getHighestCommonFactor(List<Integer> array){
-        int result = array.get(0);
-        for(int number:array){
-            result=getHighestCommonFactor(number,result);
+    public int getHighestCommonFactorService(int[] array) {
+        int highestCommonFactor = array[0];
+        for(int number:array)  {
+            highestCommonFactor = getHighestCommonFactor(highestCommonFactor, number);
         }
-        return result;
+        return highestCommonFactor;
     }
 
-    public static int getHighestCommonFactor(int a, int b){
-        if(b == 0)
-            return a;
-        return getHighestCommonFactor(b, a%b);
+    public int getHighestCommonFactor(int a, int b) {
+        // hcf of 2 numbers
+        int highestCommonFactor = 0;
+        for(int i = 1; i <= a && i <= b; i++) {
+            if (a % i == 0 && b % i == 0)
+                highestCommonFactor=i;
+        }
+        return highestCommonFactor;
     }
 }

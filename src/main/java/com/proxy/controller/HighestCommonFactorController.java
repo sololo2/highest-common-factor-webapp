@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 @RestController
 public class HighestCommonFactorController {
     private final HighestCommonFactorService highestCommonFactorService;
@@ -22,7 +20,7 @@ public class HighestCommonFactorController {
             tags = "post" )
 
     @PostMapping(value = "/highestCommonFactor.do",produces = MediaType.APPLICATION_JSON_VALUE)
-    public int getHighestCommonFactorController(@RequestBody List<Integer> array){
+    public int getHighestCommonFactorController(@RequestBody int[] array){
         highestCommonFactor = highestCommonFactorService.getHighestCommonFactorService(array);
         System.out.print("Highest Common Factor: "+ highestCommonFactor);
         return highestCommonFactor;
